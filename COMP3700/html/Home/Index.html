@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>COMP 5120 Project (jcg0031)</title>
+
+    <!-- Bootstrap -->
+    <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+		<!-- Begin-Modal -->
+		<div id="LoginModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Login</h4>
+			  </div>
+			  <div class="modal-body">
+				<form role="form">
+				  <div class="form-group">
+					<label for="UserName">UserName:</label>
+					<input type="text" class="form-control" id="UserName">
+				  </div>
+				  <div class="form-group">
+					<label for="Password">Password:</label>
+					<input type="password" class="form-control" id="Password">
+				  </div>
+				</form>
+			  </div>
+			  <div class="modal-footer">
+			    <button type="button" class="login-btn btn btn-primary" data-dismiss="modal">Login</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>
+		<!-- End-Modal -->
+		<div class="container-fluid main-window">
+			<div class="row">
+				<div class = "col-xs-12 title">
+					<h1 class="text-center">Library Management System</h1>
+				</div>
+			</div>
+			<div class="row pull-right">
+				<div id="login-section">
+							<button id="" type="button" class="btn btn-primary pre-login" data-toggle="modal" data-target="#LoginModal">Login</button>
+							<span id="user-name" class ="post-login"></span><a href="#" class="logout-btn post-login"> log out</a>
+				</div>
+			</div>
+			<div class="row  navigation">
+				<div class = "col-xs-12 text-center">
+					<div class="btn-group navigation-buttons">
+						<div id="BookButton" class="btn-group" name="Books">
+							<button type="button"  class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Books<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-books-nav"><a>Show Books</a></li>
+								<li class="admin-control create-book-nav"><a>Add Book</a></li>
+							</ul>
+						</div>
+						<div id="AuthorButton" class="btn-group" name="Authors">
+							<button type="button" name="Authors" class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Authors<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-authors-nav"><a>Show Authors</a></li>
+								<li class="admin-control create-author-nav"><a>Add Authors</a></li>
+							</ul>
+						</div>
+						<div id="WaitReportButton" class="btn-group" name="WaitReports">
+							<button type="button" name="WaitReports" class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Wait Reports<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-waitreports-nav user-control"><a>Show Wait Reports</a></li>
+							</ul>
+						</div>						
+						
+						
+						<div id="ReportButton" class="btn-group" name="Reports">
+							<button type="button" name="Reports" class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Reports<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-reports-nav user-control"><a>Show Reports</a></li>
+							</ul>
+						</div>						
+						
+						<div id="AccountButton" class="btn-group" name="Accounts">
+							<button type="button" name="Accounts" class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Accounts<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-accounts-nav admin-control"><a>Show Accounts</a></li>
+								<li class="show-accountdetails-nav user-control"><a>Account Details</a></li>
+								<li class="create-account-nav admin-control"><a>Add Accounts</a></li>
+							</ul>
+						</div>
+						<div id="ReviewButton" class="btn-group" name="Reviews">
+							<button type="button" name="Reviews" class="navbtn btn btn-default dropdown-toggle" data-toggle="dropdown">Reviews<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li class="show-reviews-nav user-control"><a>Show Reviews</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row content">
+				<div class="col-xs-12 body">
+				</div>
+			</div>
+		</div>
+
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
+<script src="COMP3700/javascript/PopulateTable.js"></script>
+<script src="COMP3700/javascript/BooksController.js"></script>
+<script src="COMP3700/javascript/AuthorsController.js"></script>
+<script src="COMP3700/javascript/AccountsController.js"></script>
+<script src="COMP3700/javascript/LoginController.js"></script>
+<script src="COMP3700/javascript/ReportsController.js"></script>
+<script src="COMP3700/javascript/WaitReportsController.js"></script>
+<script src="COMP3700/javascript/NavigationController.js"></script>
+
+<style>
+
+.details-book {
+	cursor: pointer;
+}
+.content {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	background-color: #dd550c;
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 5%;
+}
+.body {
+	background-color: white;
+	padding: 5%;
+
+}
+Body {
+	background-color: #03244d;
+}
+.dropdown-menu {
+	cursor: pointer;
+}
+.container-fluid {
+	margin-top: 10%;
+	margin-bottom: 30%;
+	background-color: #f68026;
+	padding-bottom: 10%;
+}
+
+
+</style>
+<script>
+
+</script>

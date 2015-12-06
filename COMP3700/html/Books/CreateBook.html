@@ -1,0 +1,51 @@
+<h3>Add Book </h3>
+<form class="form">
+	<div class="form-group">
+		<label for="ISBN">ISBN</label>
+		<input type="text" class="form-control" id="ISBN" placeholder="ISBN">
+	</div> 
+	<div class="form-group">
+		<label for="Title">Title</label>
+		<input type="text" class="form-control" id="Title" placeholder="Title">
+	</div> 
+	<div class="form-group">
+		<label for="NumPages">Number of Pages</label>
+		<input type="number" min="0" class="form-control" id="NumPages" placeholder="Number of pages...">
+	</div> 
+	<div class="form-group"> 
+		<label for="BookType">Book Type:</label>
+		<select class="form-control" id="BookTypeID">
+			<option value="1">Reference</option>
+			<option value="2">Hardback</option>
+			<option value="3">Paperback</option>
+		</select>
+	</div>
+	<div class="form-group"> 
+		<label for="Genre">Genre:</label>
+		<select class="form-control" id="GenreID">
+			<option value="1">Action</option>
+			<option value="2">Romance</option>
+			<option value="3">Nonfiction</option>
+			<option value="4">Fantasy</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="Author">Author:</label>
+		<select class="form-control" id="AuthorID">
+			<option value="1">Arnold Penn</option>
+			<option value="2">Sue Paper</option>
+			<option value="3">Ima Writer</option>
+			<option value="4">Hank Bill</option>
+		</select>
+	</div>
+	<div class="form-group">
+	  <label for="Description">Description:</label>
+	  <textarea class="form-control" rows="5" id="BookDescription"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="Quantity">Quantity</label>
+		<input type="number" min="0" class="form-control" id="Quantity" placeholder="Quantity">
+	</div> 
+	<button type="submit" class="create-book btn btn-primary">Submit</button>
+</form>
+

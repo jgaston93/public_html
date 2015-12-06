@@ -1,0 +1,52 @@
+<div class="authordetails-box">
+	<h2 class="author-name text-center"></h2>
+	<div id="AuthorID" AuthorID=""></div>
+	<div class="row">
+		<div class="col-xs-12">
+			<label for="Authorio">Bio:</label>
+			<p class="author-bio text-left"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<button type="button" class="review-form-button btn btn-primary pull-right">Review</button>
+			
+		</div>
+	</div>
+</div>
+
+<div id="AuthorReviewModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Author Review</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="star-rating"> 
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="1"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="2"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="3"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="4"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="5"></span>
+			  <input type="hidden" name="whatever" class="review-rating" value="0">
+			</div>
+			<div class="form-group">
+			  <label for="comment">Comment:</label>
+			  <textarea class="review-text form-control" rows="5" id="comment"></textarea>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="review-author-button btn btn-primary" >Enter</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+<style> 
+	
+</style>
