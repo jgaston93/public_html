@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>COMP 5120 Project (jcg0031)</title>
+
+    <!-- Bootstrap -->
+    <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+
+		<div class="container-fluid">
+			<div class="row topbar">
+				<div class="row title">
+					<div class="col-xs-12">
+						<h1 class="text-center">COMP 5120 Project</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+						<div class="btn-group-vertical">
+							<button type="button" class="ViewTable btn btn-default" name="Books" href="#">Books</button>
+							<button type="button" class="ViewTable btn btn-default" name="Customers"  href="#">Customers</button>
+							<button type="button" class="ViewTable btn btn-default" name="Employees"  href="#">Employees</button>
+							<button type="button" class="ViewTable btn btn-default" name="Orders"  href="#">Orders</button>
+							<button type="button" class="ViewTable btn btn-default" name="OrderDetails"  href="#">Order Details</button>
+							<button type="button" class="ViewTable btn btn-default" name="Shippers"  href="#">Shippers</button>
+							<button type="button" class="ViewTable btn btn-default" name="Subjects"  href="#">Subjects</button>
+							<button type="button" class="ViewTable btn btn-default" name="Suppliers"  href="#">Suppliers</button>
+						</div>
+				</div>
+				<div class="col-xs-8">
+					<form role="form">
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="Query" placeholder="Enter query here..."></textarea>
+						</div>
+							<button id="SubmitButton" class="pull-right btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div id="QueryResults" class="col-xs-12 nodisplay">
+					<div id="QueryError" class="col-xs-12">
+						<div class="errorText">
+						</div>
+					</div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+				
+		</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<style>
+.container-fluid {
+	margin-bottom:20%;
+	padding-bottom: 5%;
+	background-color:white;
+	
+}
+
+body {
+	background-color:#03244d;
+}
+
+form {
+	max-width:90%;
+}
+btn-group-vertical {
+	max-width:90%;
+}
+
+
+.nodisplay {
+	display: none;
+}
+
+
+.topbar {
+	background-color:#dd550c;
+	margin-bottom:10%;
+}
+
+.title {
+	margin:5%;
+	background-color:#dd550c;
+	border-radius: 25px;
+}
+
+.title div h1 {
+	color:white;
+}
+.table {
+	background-color:lightgrey;
+}
+
+.navi{
+
+	width:50%;
+	margin 0 auto;
+}
+#QueryResults {
+	margin-top: 5%;
+	overflow:scroll;
+	overflow-y:hidden;
+	
+}
+
+</style>
+<script>
+	$("#SubmitButton").on("click", function(e) {
+	
+		var query = $("#Query").val();
+			$("#QueryError").slideUp($("#QueryResults").slideUp(function() {
+				$.ajax({
+					url: "Assets/php/executeQuery.php",
+					type: "post",
+					data:  {Query : query},
+					success: function(data) {populateTable(data)},
+					error: function(data) {populateTable(data)}
+				});
+			})
+		);
+	});
+	
+	$(".ViewTable").on("click", function() {
+		var query = $(this).attr("name");
+		query = "SELECT * FROM " + query;
+     alert(query);
+		$("#QueryResults").slideUp(function() {
+			$.ajax({
+				url: "Assets/php/executeQuery.php",
+				type: "post",
+				data:  {Query : query},
+				success: function(data) {populateTable(data)},
+				error: function(data) {populateTable(data)}
+			});
+		});
+	});
+	
+	function populateTable(d) {
+		if(d.toLowerCase().indexOf("warning") >= 0) {
+			$("thead").html("");
+			$("tbody").html("");
+			$("#QueryError").children().html(d);
+			$("#QueryResults").slideDown();
+		}else {
+			$("#QueryError").children().html("");
+			var i = 0;
+			var results = jQuery.parseJSON(d);
+			var rows;
+			var column_names;
+			$.each(results, function(key, value) {
+				if(i > 0) {
+						rows += "<tr>";
+						$.each(value, function(k, v) {
+							rows += "<td>" + v + "</td>";
+						});
+						rows += "</tr>";
+					
+				}else {
+					column_names += "<tr>";
+					$.each(value, function(k, v) {
+						column_names += "<th>" + v + "</th>";
+					});
+					column_names += "</tr>";
+				}
+				i++;
+			});
+			$("thead").html(column_names);
+			$("tbody").html(rows);
+			$("#QueryResults").slideDown();
+		}
+	}
+</script>

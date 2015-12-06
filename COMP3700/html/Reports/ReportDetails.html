@@ -1,0 +1,73 @@
+<h3 class="report-title text-center">Title</h3>
+<div id="ReportID" ReportID=""></div>
+<div class="row text-center">
+	<div class="col-xs-6">
+		<label for="report-patron">Patron:</label>
+		<span class="report-patron"></span>
+	</div>
+	<div class="col-xs-6">
+		<label for="report-book">Book:</label>
+		<span class="report-book">Genre</span>
+	</div>
+</div>
+<div class="row text-center">
+	<div class="col-xs-6">
+		<label for="report-startdate">Start Date:</label>
+		<span class="report-startdate"></span>
+	</div>
+	<div class="col-xs-6">
+		<label for="report-duedate">Due Date:</label>
+		<span class="report-duedate"></span>
+	</div>
+</div>
+<div class="row text-center">
+	<div class="col-xs-3">
+		<label for="report-Active">Active:</label>
+		<span class="report-Active"></span>
+	</div>
+	<div class="col-xs-3">
+		<label for="report-pickedup">Picked Up:</label>
+		<span class="report-pickedup"></span>
+	</div>
+	<div class="col-xs-3">
+		<label for="report-late">Late:</label>
+		<span class="report-late"></span>
+	</div>
+	<div class="col-xs-3">
+		<label for="report-lost">Lost:</label>
+		<span class="report-lost"></span>
+	</div>
+	
+		
+</div>
+
+<button type="button" class="check-in btn btn-primary pull-right">Check In</button>
+<button type="button" class="renew btn btn-primary pull-right">Renew</button>
+<button type="button" class="cancel btn btn-primary pull-right">Cancel</button>
+<button type="button" class="acknowledge-pickup btn btn-primary pull-right">Pick Up</button>
+
+<!-- Modal -->
+<div id="ReservationModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Out of stock</h4>
+      </div>
+      <div class="modal-body">
+        <p>Would you like to put in a reservation?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="reserve-book btn btn-primary" >Yes</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style> 
+
+</style>

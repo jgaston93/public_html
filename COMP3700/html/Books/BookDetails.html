@@ -1,0 +1,92 @@
+<div class="bookdetails-box">
+	<h2 class="book-title text-center">Title</h2>
+	<h4 class="book-author text-center">Author</h4>
+	<div id="BookID" BookID=""></div>
+	<div class="row">
+		<div class="col-xs-4">
+			<label for="BookType">Book Type:</label>
+			<span class="book-type">Book Type</span>
+		</div>
+		<div class="col-xs-4">
+			<label for="Genre">Genre:</label>
+			<span class="book-genre">Genre</span>
+		</div>
+		<div class="col-xs-4"> 
+			<label for="NumPages">NumPages:</label>
+			<span class="book-numpages">NumPages</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<label for="Description">Description:</label>
+			<p class="book-description text-left">This is a description of the book.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<label for="Quantity">Quantity:</label>
+			<span class="book-quantity">Quantity</span>
+			<button type="button" class="check-out btn btn-primary pull-right">Check Out</button>
+			<button type="button" class="review-form-button btn btn-primary pull-right">Review</button>
+			
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div id="WaitReportModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Out of stock</h4>
+      </div>
+      <div class="modal-body">
+        <p>Would you like to enter the waiting list?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="wait-button btn btn-primary" >Enter</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="BookReviewModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Book Review</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="star-rating"> 
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="1"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="2"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="3"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="4"></span>
+			  <span class="rating-element glyphicon glyphicon-star-empty" data-rating="5"></span>
+			  <input type="hidden" name="whatever" class="review-rating" value="3">
+			</div>
+			<div class="form-group">
+			  <label for="comment">Comment:</label>
+			  <textarea class="review-text form-control" rows="5" id="comment"></textarea>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="review-book-button btn btn-primary" >Enter</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+<style> 
+	
+</style>

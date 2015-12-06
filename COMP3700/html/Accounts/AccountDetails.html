@@ -1,0 +1,47 @@
+<div class="accountdetails-box">
+	<h2 class="account-username text-center"></h2>
+	<h4 class="account-creationdate text-center"></h4>
+	<div id="AccountID" AccountID=""></div>
+	<div class="row">
+		<div class="col-xs-4">
+			<label for="Status">Account Status:</label>
+			<span class="account-status"></span>
+		</div>
+		<div class="col-xs-4">
+			<label for="Permission">Account Permissions:</label>
+			<span class="account-permission"></span>
+		</div>
+		<div class="col-xs-4"> 
+			<label for="Fines">Fines:</label>
+			<span class="account-fines"></span>
+			<button type="button" class="pay-form-button btn btn-primary" >Pay</button>
+		</div>
+	</div>
+
+</div>
+
+<!-- Modal -->
+<div id="PayFineModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Fine Payment</h4>
+      </div>
+      <div class="modal-body">
+        <p>Would you like to pay outstanding fines?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="pay-fine-button btn btn-primary" >Yes</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style> 
+	
+</style>
